@@ -48,7 +48,10 @@ export class NormalFooter extends LoadingFooter {
     return (
       <Animated.Image
         source={require("./assets/arrow.png")}
+        resizeMode={'center'}
         style={{
+          width: 30,
+          height: 30,
           transform: [
             {
               rotate: offset.interpolate({

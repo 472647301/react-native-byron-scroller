@@ -91,12 +91,14 @@ function NormalRefreshHeader(props) {
                 ],
               },
             ]}
+            resizeMode={'center'}
             source={arrowIcon || require("./assets/arrow.png")}
           />
           <ActivityIndicator
             style={{ opacity: refreshing ? 1 : 0 }}
             animating={true}
             size="small"
+            color={'gray'}
             hidesWhenStopped={true}
             {...activityIndicatorProps}
           />
@@ -144,7 +146,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: 30,
     height: 30,
-    resizeMode: "contain",
   },
 });
 

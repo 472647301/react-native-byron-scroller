@@ -23,7 +23,7 @@ export class SmartRefresh extends React.PureComponent {
   };
   render() {
     const { children } = this.props;
-    <View style={{ flex: 1, overflow: "hidden" }}>
+    return <View style={{ flex: 1, overflow: "hidden" }}>
       <RNSmartRefresh {...this.props}>{children}</RNSmartRefresh>
     </View>;
   }
