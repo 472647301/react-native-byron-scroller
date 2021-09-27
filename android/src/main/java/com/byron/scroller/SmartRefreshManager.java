@@ -44,4 +44,11 @@ public class SmartRefreshManager extends ViewGroupManager<RCTRefreshLayout> {
         }
     }
 
+    @ReactProp(name = "autoRefresh")
+    public void setAutoRefresh(RCTRefreshLayout view, Boolean autoRefresh) {
+        if(autoRefresh){
+            view.autoRefresh();
+        }
+    }
+
 }

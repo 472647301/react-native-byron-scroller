@@ -7,7 +7,8 @@ export class ByronScroller extends React.PureComponent {
   isInit = false;
   state = {
     refreshing: false,
-    footerLoading: false
+    footerLoading: false,
+    autoRefresh: false
   }
   // 结束下拉刷新
   endRefresh = () => {
@@ -21,7 +22,7 @@ export class ByronScroller extends React.PureComponent {
     if (this.state.refreshing) {
       return
     }
-    this.setState({refreshing: true})
+    this.setState({refreshing: true,autoRefresh:false})
     this.props.onRefresh && this.props.onRefresh()
   }
   onEndReached = () => {
@@ -41,7 +42,7 @@ export class ByronScroller extends React.PureComponent {
       animated: params.animated || true
     })
     if (params.y && params.y < 0) {
-      this.onRefresh()
+      this.setState({autoRefresh:true})
     }
   }
   ListFooterComponent = () => {
@@ -67,7 +68,7 @@ export class ByronScroller extends React.PureComponent {
   }
   render() {
     const {style} = this.props
-    const {refreshing} = this.state
+    const {refreshing,autoRefresh} = this.state
     return <FlatList
               style={style}
               data={[{'list':'flat'}]} 
@@ -75,6 +76,7 @@ export class ByronScroller extends React.PureComponent {
                 <RefreshNormalHeader 
                   refreshing={refreshing} 
                   onRefresh={this.onRefresh}
+                  autoRefresh={autoRefresh}
                 />
               }
               // onEndReachedThreshold={0.1} 

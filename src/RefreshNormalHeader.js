@@ -23,6 +23,7 @@ function NormalRefreshHeader(props) {
     leftContainerStyle,
     rightContainerStyle,
     imageStyle,
+    autoRefresh
   } = props;
 
   const [title, setTitle] = useState("下拉刷新");
@@ -72,7 +73,7 @@ function NormalRefreshHeader(props) {
     }
   }, []);
   return (
-    <SmartRefresh refreshing={refreshing} onChangeState={onChangeStateCallBack}>
+    <SmartRefresh refreshing={refreshing} autoRefresh={autoRefresh} onChangeState={onChangeStateCallBack}>
       <SmartRefreshHeader style={[styles.container, { ...containerStyle }]}>
         <View style={[styles.leftContainer, { ...leftContainerStyle }]}>
           <Animated.Image
