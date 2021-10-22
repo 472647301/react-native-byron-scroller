@@ -44,8 +44,8 @@ export class NormalHeader extends RefreshHeader {
         source={require("./assets/arrow.png")}
         resizeMode={'center'}
         style={{
-          width: 30,
-          height: 30,
+          width: 15,
+          height: 40,
           transform: [
             {
               rotate: offset.interpolate({
