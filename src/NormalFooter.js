@@ -76,18 +76,18 @@ export class NormalFooter extends LoadingFooter {
 
   getTitle() {
     const s = this.state.status;
-    if (s === "dragging" || s === "waiting") {
-      return "Drag up to load";
-    } else if (s === "draggingEnough") {
-      return "Release to load";
-    } else if (s === "loading") {
-      return "Loading ...";
-    } else if (s === "draggingCancel") {
-      return "Give up loading";
-    } else if (s === "rebound") {
-      return "Load completed";
-    } else if (s === "allLoaded") {
-      return "No more data";
+    if (s === 'dragging' || s === 'waiting') {
+      return '上拉加载更多';
+    } else if (s === 'draggingEnough') {
+      return '松开加载更多';
+    } else if (s === 'loading') {
+      return '正在加载数据...';
+    } else if (s === 'draggingCancel') {
+      return '放弃加载更多';
+    } else if (s === 'rebound') {
+      return '加载完成';
+    } else if (s === 'allLoaded') {
+      return '已经到底啦';
     }
   }
 }

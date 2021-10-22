@@ -65,16 +65,16 @@ export class NormalHeader extends RefreshHeader {
 
   getTitle() {
     const s = this.state.status;
-    if (s === "pulling" || s === "waiting") {
-      return "Pull down to refresh";
-    } else if (s === "pullingEnough") {
-      return "Release to refresh";
-    } else if (s === "refreshing") {
-      return "Refreshing ...";
-    } else if (s === "pullingCancel") {
-      return "Give up refreshing";
-    } else if (s === "rebound") {
-      return "Refresh completed";
+    if (s === 'pulling' || s === 'waiting') {
+      return '下拉可以刷新';
+    } else if (s === 'pullingEnough') {
+      return '松开立即刷新';
+    } else if (s === 'refreshing') {
+      return '正在刷新数据中...';
+    } else if (s === 'pullingCancel') {
+      return '放弃刷新';
+    } else if (s === 'rebound') {
+      return '刷新完成';
     }
   }
 }
