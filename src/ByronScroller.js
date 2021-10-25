@@ -36,7 +36,7 @@ export class ByronScroller extends React.PureComponent {
     return this.props.children
   }
   scrollTo = (params = {}) => {
-    this.listRef.scrollToOffset({
+    this.listRef?.scrollToOffset({
       x: params.x || 0,
       y: params.y || 0,
       animated: params.animated || true
@@ -60,6 +60,9 @@ export class ByronScroller extends React.PureComponent {
     // </View>
     // }
     return null
+  }
+  scrollToEnd = (params) => {
+    this.listRef?.scrollToEnd(params)
   }
   componentDidMount() {
     setTimeout(() => {
